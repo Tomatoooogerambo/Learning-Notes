@@ -220,7 +220,19 @@ while getopts "h?dsb" opt; do
     esac
 done
 
-if [ "$DOCKER" == "true" ]; then
+if [ "${SAMPLES}" == "true" ]; then
+    echo
+    echo "Installing hyperledger/fabric-samples repo"
+    echo
+    samplesInstall
+fi
+if [ "${BINARIES}" == "true" ]; then
+    echo
+    echo "Installing Hyperledger Fabric binaries"
+    echo
+    binariesInstall
+fi
+if [ "${DOCKER}" == "true" ]; then
     echo
     echo "Installing Hyperledger Fabric docker images"
     echo
