@@ -25,4 +25,6 @@ def balanced_parentheses(parentheses):
 		if parenthesis == '(':
 			stack.push(parenthesis)
 		else:
-			stack.pop()
+			if parenthesis == ')':
+				if !
+
