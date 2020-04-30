@@ -1,5 +1,5 @@
 class Stack(object):
-	def _init_(self, limit = 10):
+	def __init__(self, limit = 10):
 		self.stack = []
 		self.limit = limit
 
@@ -14,17 +14,28 @@ class Stack(object):
 		else:
 			raise IndexError("Stack has been empty")
 
+	def is_empty(self):
+		return not bool(self.stack)
 
 def balanced_parentheses(parentheses):
+	print(len(parentheses))
 	if len(parentheses) % 2 != 0:
 		return False
-
+	# odd number must be not balanced
 	stack = Stack(len(parentheses))
 
-	for parenthesis in parentheses:
-		if parenthesis == '(':
-			stack.push(parenthesis)
+	for item in parentheses:
+		if item == '(':
+			stack.push('(')
 		else:
-			if parenthesis == ')':
-				if !
+			if stack.is_empty():
+				return False
+			else:
+				stack.pop()
 
+	return True
+if __name__ == '__main__':
+	examples = ['(((())))', '(((()))', '((())))']
+
+	for exam in examples:
+		print("exmales is balanced_parentheses?: ", balanced_parentheses(exam))
