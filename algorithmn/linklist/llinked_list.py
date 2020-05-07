@@ -10,8 +10,8 @@ class Linked_list:
 	#append()	
 	def append(self, node):
 		# 1- head node
-		if head == None:
-			head = node
+		if	self.head == None:
+			self.head = node
 		# 2- not head node
 		# create point to test
 		else:
@@ -26,11 +26,11 @@ class Linked_list:
 
 	#get_length()
 	def get_length(self):
-		length = 0;
+		length = 0
 		current = self.head
 		while current:
 			current = current.next
-			leng += 1
+			length += 1
 		return length
 
 
@@ -44,7 +44,7 @@ class Linked_list:
 			node.next = temp
 		else:
 			current = self.head
-			while index - 1 > 1
+			while index - 1 > 1:
 				current = current.next
 				index -= 1
 			temp = current.next
@@ -68,15 +68,12 @@ class Linked_list:
 				current = current.next
 				index -= 1
 			current.next = current.next.next
+
+	#reverse the linklist
+	# *** reverse方法链表中的难点
+	#在一次链表的操作过程当中需要使用三个引用变量来进行
+	def reverse(self):
 		
-
-
-
-
-
-	
-	*** reverse() ***
-	print_list()
 
 
 
